@@ -1,8 +1,10 @@
 {
   "expo": {
-    "name": "newdesignqrw",
-    "slug": "newdesignqrw",
-    "version": "1.0.0",
+    "name": "QRW",
+    "slug": "qrw",
+    "description": "Приложение для хранения QR-кодов",
+    "version": "1.1.0",
+    "sdkVersion": "42.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,16 +19,45 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "infoPlist": {
+        "NSCameraUsageDescription": "Это приложение использует библиотеку фотографий для сканирования штрих-кодов на выбранных вами фотографиях",
+        "NSPhotoLibraryUsageDescription": "Это приложение использует камеру для сканирования штрих-кодов",
+        "CFBundleAllowMixedLocalizations": true
+      },
+      "supportsTablet": true,
+      "bundleIdentifier": "com.qrwallet",
+      "buildNumber": "2"
+    },
+    "locales": {
+      "ru": "./app/locales/russian.json",
+      "en": "./app/locales/english.json"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#39E400"
+      },
+      "package": "com.qrw",
+      "versionCode": 12
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
     }
   }
 }
